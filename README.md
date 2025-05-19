@@ -1,4 +1,4 @@
-# Graph2Token
+# Enviroments and Configurations
 
 ## Requirements
 
@@ -33,4 +33,24 @@ python main_graph_token_regression.py
 
 > **Note**: Please download the checkpoints of Vicuna 1.5 from [this link](https://huggingface.co/lmsys/vicuna-7b-v1.5) and put them under the `./LLM` directory.
 
-# LLM4graph
+# Methods in LLM4graph
+| Ablation Models       | default | Build | Algo | NodeSeq | CoT | Prefix | LoRA | Alignment | Position | Multi-level | Context | Category |
+|-----------------------|---------|-------|------|---------|-----|--------|------|-----------|----------|-------------|---------|----------|
+| Prompts Only          | ✓       |       |      |         |     |        |      |           |          |             |         | G2to     |
+| GNN Only              |         |       |      |         |     |        |      | ✓         |          |             |         |          |
+| **Standard Model**    | ✓       |       |      |         |     |        |      | ✓         |          |             |         | G2to     |
+| Different Prompts 1   |         | ✓     |      |         |     |        |      | ✓         |          |             |         | G2te     |
+| Different Prompts 2   |         |       | ✓    |         |     |        |      | ✓         |          |             |         | G2to     |
+| Different Prompts 3   |         |       |      | ✓       |     |        |      | ✓         |          |             |         | G2to     |
+| Different Prompts 4   |         |       |      |         | ✓   |        |      | ✓         |          |             |         | G2te     |
+| Prompt+Prefix         | ✓       |       |      |         |     | ✓      |      | ✓         |          |             |         | G2to     |
+| Prompt+LoRA           | ✓       |       |      |         |     |        | ✓    | ✓         |          |             |         | G2te     |
+| Prompt+Position       | ✓       |       |      |         |     |        |      | ✓         | ✓        |             |         | G2te     |
+| Prompt+Multi-level    | ✓       |       |      |         |     |        |      | ✓         |          | ✓           |         | G2te     |
+| Prompt+Context        | ✓       |       |      |         |     |        |      | ✓         |          |             | ✓       | G2to     |
+| **Full Model**        | ✓       |       |      |         |     | ✓      | ✓    | ✓         | ✓        | ✓           | ✓       |          |
+
+
+Default Prompts
+
+Build-a-Graph Prompting
